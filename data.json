@@ -1,0 +1,15 @@
+{
+"version": "1.0",
+"method": "topup",
+"data": 
+{
+	“txnReferenceNumber”: "123456789012345",
+	"customerNumber": "255123456789",
+	"customerName": "Test AzamTV Customer",
+	"requestTime": 1559030396770,
+	"walletProviderCode": "WTP",
+	"walletNumber": "255123456789",
+	"amount": 15000,
+},
+"checksum": "QVBfQVRWZmplcmdoeTloeXVnNHQ3dDZoaGgwOTVqeTZ1MDV="
+}

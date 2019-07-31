@@ -1,0 +1,20 @@
+CHECKSUM GENERATION
+The checksum has to be generated using the following algorithm:
+1. Create a Message Digest with ​ SHA-512​ algorithm for the ​ txnReferenceNumber.
+2. Create a secret key using the first 32 bytes of the ​ message digest​ and the ​ AES ​ encryption
+method.
+3. Get a ​ AES/CBC/PKCS5Padding ​ cipher instance.
+4. Initialize the cipher in encryption mode with the secret key obtained in ​ step 2​ and a 16
+byte Initialization Vector.
+5. Generate the ​ validation string​ by concatenating the values of the following fields (in that
+order):
+a. API User (to be provided separately by XyzPay).
+b. API Key (to be provided separately by XyzPay).
+c. txnReferenceNumber.
+d. customerNumber
+e. requestTime
+f. walletProviderCode
+g. walletNumber
+h. amount
+6. Encrypt the ​ validation string​ obtained above using the cipher.
+7. Apply ​ Base64 encoding ​ to the encrypted value obtained from the previous step.
